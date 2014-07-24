@@ -8,20 +8,17 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
-  let ballRadius: CGFloat
-  let ball: SKShapeNode
+let ballRadius: CGFloat = 75
 
-  init(coder aDecoder: NSCoder!)  {
-    self.ballRadius = 75
-    self.ball = SKShapeNode(circleOfRadius: self.ballRadius)
-    super.init(coder: aDecoder)
-  }
+class GameScene: SKScene {
+  let ball: SKShapeNode = SKShapeNode(circleOfRadius: ballRadius)
 
   override func didMoveToView(view: SKView) {
+    self.backgroundColor = SKColor.grayColor()
+    self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
     self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
 
-    ball.fillColor = UIColor.blackColor()
+    ball.fillColor = SKColor.blackColor()
     ball.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
     ball.physicsBody = SKPhysicsBody(circleOfRadius: ballRadius)
     ball.physicsBody.allowsRotation = false
@@ -32,7 +29,17 @@ class GameScene: SKScene {
     /* Called when a touch begins */
         
     for touch: AnyObject in touches {
-      ball.physicsBody.applyImpulse(CGVectorMake(0, 500))
+      let location = touch.locationInNode(self)
+      // Only apply an impulse if the touch occured inside the ball
+      if ball.containsPoint(location) {
+        let point = touch.locationInNode(ball)
+        // point.x is where inside the ball the touch occured.
+        // We're inverting the value so that a touch on the left causes the ball
+        // to move to the right, and vice versa.
+        ball.physicsBody.applyImpulse(CGVectorMake(-point.x, 500), atPoint: point)
+      }
+
+
     }
   }
    
