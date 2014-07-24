@@ -7,48 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E1B27FDE19776D3B006DBC47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B27FDD19776D3B006DBC47 /* AppDelegate.swift */; };
-		E1B27FE019776D3B006DBC47 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E1B27FDF19776D3B006DBC47 /* GameScene.sks */; };
-		E1B27FE219776D3B006DBC47 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B27FE119776D3B006DBC47 /* GameScene.swift */; };
-		E1B27FE419776D3B006DBC47 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B27FE319776D3B006DBC47 /* GameViewController.swift */; };
-		E1B27FE719776D3B006DBC47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1B27FE519776D3B006DBC47 /* Main.storyboard */; };
-		E1B27FE919776D3B006DBC47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1B27FE819776D3B006DBC47 /* Images.xcassets */; };
-		E1B27FF519776D3B006DBC47 /* BapitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B27FF419776D3B006DBC47 /* BapitTests.swift */; };
+		E14C02D5198091BB00436463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C02D4198091BB00436463 /* AppDelegate.swift */; };
+		E14C02D7198091BB00436463 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E14C02D6198091BB00436463 /* GameScene.sks */; };
+		E14C02D9198091BB00436463 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C02D8198091BB00436463 /* GameScene.swift */; };
+		E14C02DB198091BB00436463 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C02DA198091BB00436463 /* GameViewController.swift */; };
+		E14C02DE198091BB00436463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14C02DC198091BB00436463 /* Main.storyboard */; };
+		E14C02E0198091BB00436463 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14C02DF198091BB00436463 /* Images.xcassets */; };
+		E14C02EC198091BB00436463 /* BapitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C02EB198091BB00436463 /* BapitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E1B27FEF19776D3B006DBC47 /* PBXContainerItemProxy */ = {
+		E14C02E6198091BB00436463 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E1B27FD019776D3B006DBC47 /* Project object */;
+			containerPortal = E14C02C7198091BB00436463 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E1B27FD719776D3B006DBC47;
+			remoteGlobalIDString = E14C02CE198091BB00436463;
 			remoteInfo = Bapit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E1B27FD819776D3B006DBC47 /* Bapit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bapit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1B27FDC19776D3B006DBC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1B27FDD19776D3B006DBC47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1B27FDF19776D3B006DBC47 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		E1B27FE119776D3B006DBC47 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		E1B27FE319776D3B006DBC47 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		E1B27FE619776D3B006DBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E1B27FE819776D3B006DBC47 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E1B27FEE19776D3B006DBC47 /* BapitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BapitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1B27FF319776D3B006DBC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1B27FF419776D3B006DBC47 /* BapitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BapitTests.swift; sourceTree = "<group>"; };
+		E14C02CF198091BB00436463 /* Bapit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bapit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14C02D3198091BB00436463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14C02D4198091BB00436463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E14C02D6198091BB00436463 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E14C02D8198091BB00436463 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		E14C02DA198091BB00436463 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E14C02DD198091BB00436463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E14C02DF198091BB00436463 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E14C02E5198091BB00436463 /* BapitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BapitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14C02EA198091BB00436463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14C02EB198091BB00436463 /* BapitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BapitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E1B27FD519776D3B006DBC47 /* Frameworks */ = {
+		E14C02CC198091BB00436463 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1B27FEB19776D3B006DBC47 /* Frameworks */ = {
+		E14C02E2198091BB00436463 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,59 +58,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E1B27FCF19776D3B006DBC47 = {
+		E14C02C6198091BB00436463 = {
 			isa = PBXGroup;
 			children = (
-				E1B27FDA19776D3B006DBC47 /* Bapit */,
-				E1B27FF119776D3B006DBC47 /* BapitTests */,
-				E1B27FD919776D3B006DBC47 /* Products */,
+				E14C02D1198091BB00436463 /* Bapit */,
+				E14C02E8198091BB00436463 /* BapitTests */,
+				E14C02D0198091BB00436463 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E1B27FD919776D3B006DBC47 /* Products */ = {
+		E14C02D0198091BB00436463 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E1B27FD819776D3B006DBC47 /* Bapit.app */,
-				E1B27FEE19776D3B006DBC47 /* BapitTests.xctest */,
+				E14C02CF198091BB00436463 /* Bapit.app */,
+				E14C02E5198091BB00436463 /* BapitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E1B27FDA19776D3B006DBC47 /* Bapit */ = {
+		E14C02D1198091BB00436463 /* Bapit */ = {
 			isa = PBXGroup;
 			children = (
-				E1B27FDD19776D3B006DBC47 /* AppDelegate.swift */,
-				E1B27FDF19776D3B006DBC47 /* GameScene.sks */,
-				E1B27FE119776D3B006DBC47 /* GameScene.swift */,
-				E1B27FE319776D3B006DBC47 /* GameViewController.swift */,
-				E1B27FE519776D3B006DBC47 /* Main.storyboard */,
-				E1B27FE819776D3B006DBC47 /* Images.xcassets */,
-				E1B27FDB19776D3B006DBC47 /* Supporting Files */,
+				E14C02D4198091BB00436463 /* AppDelegate.swift */,
+				E14C02D6198091BB00436463 /* GameScene.sks */,
+				E14C02D8198091BB00436463 /* GameScene.swift */,
+				E14C02DA198091BB00436463 /* GameViewController.swift */,
+				E14C02DC198091BB00436463 /* Main.storyboard */,
+				E14C02DF198091BB00436463 /* Images.xcassets */,
+				E14C02D2198091BB00436463 /* Supporting Files */,
 			);
 			path = Bapit;
 			sourceTree = "<group>";
 		};
-		E1B27FDB19776D3B006DBC47 /* Supporting Files */ = {
+		E14C02D2198091BB00436463 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E1B27FDC19776D3B006DBC47 /* Info.plist */,
+				E14C02D3198091BB00436463 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E1B27FF119776D3B006DBC47 /* BapitTests */ = {
+		E14C02E8198091BB00436463 /* BapitTests */ = {
 			isa = PBXGroup;
 			children = (
-				E1B27FF419776D3B006DBC47 /* BapitTests.swift */,
-				E1B27FF219776D3B006DBC47 /* Supporting Files */,
+				E14C02EB198091BB00436463 /* BapitTests.swift */,
+				E14C02E9198091BB00436463 /* Supporting Files */,
 			);
 			path = BapitTests;
 			sourceTree = "<group>";
 		};
-		E1B27FF219776D3B006DBC47 /* Supporting Files */ = {
+		E14C02E9198091BB00436463 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E1B27FF319776D3B006DBC47 /* Info.plist */,
+				E14C02EA198091BB00436463 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -118,13 +118,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E1B27FD719776D3B006DBC47 /* Bapit */ = {
+		E14C02CE198091BB00436463 /* Bapit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1B27FF819776D3B006DBC47 /* Build configuration list for PBXNativeTarget "Bapit" */;
+			buildConfigurationList = E14C02EF198091BB00436463 /* Build configuration list for PBXNativeTarget "Bapit" */;
 			buildPhases = (
-				E1B27FD419776D3B006DBC47 /* Sources */,
-				E1B27FD519776D3B006DBC47 /* Frameworks */,
-				E1B27FD619776D3B006DBC47 /* Resources */,
+				E14C02CB198091BB00436463 /* Sources */,
+				E14C02CC198091BB00436463 /* Frameworks */,
+				E14C02CD198091BB00436463 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -132,46 +132,46 @@
 			);
 			name = Bapit;
 			productName = Bapit;
-			productReference = E1B27FD819776D3B006DBC47 /* Bapit.app */;
+			productReference = E14C02CF198091BB00436463 /* Bapit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E1B27FED19776D3B006DBC47 /* BapitTests */ = {
+		E14C02E4198091BB00436463 /* BapitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E1B27FFB19776D3B006DBC47 /* Build configuration list for PBXNativeTarget "BapitTests" */;
+			buildConfigurationList = E14C02F2198091BB00436463 /* Build configuration list for PBXNativeTarget "BapitTests" */;
 			buildPhases = (
-				E1B27FEA19776D3B006DBC47 /* Sources */,
-				E1B27FEB19776D3B006DBC47 /* Frameworks */,
-				E1B27FEC19776D3B006DBC47 /* Resources */,
+				E14C02E1198091BB00436463 /* Sources */,
+				E14C02E2198091BB00436463 /* Frameworks */,
+				E14C02E3198091BB00436463 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E1B27FF019776D3B006DBC47 /* PBXTargetDependency */,
+				E14C02E7198091BB00436463 /* PBXTargetDependency */,
 			);
 			name = BapitTests;
 			productName = BapitTests;
-			productReference = E1B27FEE19776D3B006DBC47 /* BapitTests.xctest */;
+			productReference = E14C02E5198091BB00436463 /* BapitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E1B27FD019776D3B006DBC47 /* Project object */ = {
+		E14C02C7198091BB00436463 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = harrywolff.com;
+				ORGANIZATIONNAME = com.chartbeat;
 				TargetAttributes = {
-					E1B27FD719776D3B006DBC47 = {
+					E14C02CE198091BB00436463 = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					E1B27FED19776D3B006DBC47 = {
+					E14C02E4198091BB00436463 = {
 						CreatedOnToolsVersion = 6.0;
-						TestTargetID = E1B27FD719776D3B006DBC47;
+						TestTargetID = E14C02CE198091BB00436463;
 					};
 				};
 			};
-			buildConfigurationList = E1B27FD319776D3B006DBC47 /* Build configuration list for PBXProject "Bapit" */;
+			buildConfigurationList = E14C02CA198091BB00436463 /* Build configuration list for PBXProject "Bapit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -179,29 +179,29 @@
 				en,
 				Base,
 			);
-			mainGroup = E1B27FCF19776D3B006DBC47;
-			productRefGroup = E1B27FD919776D3B006DBC47 /* Products */;
+			mainGroup = E14C02C6198091BB00436463;
+			productRefGroup = E14C02D0198091BB00436463 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E1B27FD719776D3B006DBC47 /* Bapit */,
-				E1B27FED19776D3B006DBC47 /* BapitTests */,
+				E14C02CE198091BB00436463 /* Bapit */,
+				E14C02E4198091BB00436463 /* BapitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E1B27FD619776D3B006DBC47 /* Resources */ = {
+		E14C02CD198091BB00436463 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B27FE919776D3B006DBC47 /* Images.xcassets in Resources */,
-				E1B27FE019776D3B006DBC47 /* GameScene.sks in Resources */,
-				E1B27FE719776D3B006DBC47 /* Main.storyboard in Resources */,
+				E14C02E0198091BB00436463 /* Images.xcassets in Resources */,
+				E14C02D7198091BB00436463 /* GameScene.sks in Resources */,
+				E14C02DE198091BB00436463 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1B27FEC19776D3B006DBC47 /* Resources */ = {
+		E14C02E3198091BB00436463 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -211,39 +211,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E1B27FD419776D3B006DBC47 /* Sources */ = {
+		E14C02CB198091BB00436463 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B27FE219776D3B006DBC47 /* GameScene.swift in Sources */,
-				E1B27FE419776D3B006DBC47 /* GameViewController.swift in Sources */,
-				E1B27FDE19776D3B006DBC47 /* AppDelegate.swift in Sources */,
+				E14C02D9198091BB00436463 /* GameScene.swift in Sources */,
+				E14C02DB198091BB00436463 /* GameViewController.swift in Sources */,
+				E14C02D5198091BB00436463 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E1B27FEA19776D3B006DBC47 /* Sources */ = {
+		E14C02E1198091BB00436463 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1B27FF519776D3B006DBC47 /* BapitTests.swift in Sources */,
+				E14C02EC198091BB00436463 /* BapitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E1B27FF019776D3B006DBC47 /* PBXTargetDependency */ = {
+		E14C02E7198091BB00436463 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E1B27FD719776D3B006DBC47 /* Bapit */;
-			targetProxy = E1B27FEF19776D3B006DBC47 /* PBXContainerItemProxy */;
+			target = E14C02CE198091BB00436463 /* Bapit */;
+			targetProxy = E14C02E6198091BB00436463 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E1B27FE519776D3B006DBC47 /* Main.storyboard */ = {
+		E14C02DC198091BB00436463 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E1B27FE619776D3B006DBC47 /* Base */,
+				E14C02DD198091BB00436463 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E1B27FF619776D3B006DBC47 /* Debug */ = {
+		E14C02ED198091BB00436463 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -293,7 +293,7 @@
 			};
 			name = Debug;
 		};
-		E1B27FF719776D3B006DBC47 /* Release */ = {
+		E14C02EE198091BB00436463 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -328,7 +328,7 @@
 			};
 			name = Release;
 		};
-		E1B27FF919776D3B006DBC47 /* Debug */ = {
+		E14C02F0198091BB00436463 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -339,7 +339,7 @@
 			};
 			name = Debug;
 		};
-		E1B27FFA19776D3B006DBC47 /* Release */ = {
+		E14C02F1198091BB00436463 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -350,7 +350,7 @@
 			};
 			name = Release;
 		};
-		E1B27FFC19776D3B006DBC47 /* Debug */ = {
+		E14C02F3198091BB00436463 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bapit.app/Bapit";
@@ -369,7 +369,7 @@
 			};
 			name = Debug;
 		};
-		E1B27FFD19776D3B006DBC47 /* Release */ = {
+		E14C02F4198091BB00436463 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Bapit.app/Bapit";
@@ -387,32 +387,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E1B27FD319776D3B006DBC47 /* Build configuration list for PBXProject "Bapit" */ = {
+		E14C02CA198091BB00436463 /* Build configuration list for PBXProject "Bapit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1B27FF619776D3B006DBC47 /* Debug */,
-				E1B27FF719776D3B006DBC47 /* Release */,
+				E14C02ED198091BB00436463 /* Debug */,
+				E14C02EE198091BB00436463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E1B27FF819776D3B006DBC47 /* Build configuration list for PBXNativeTarget "Bapit" */ = {
+		E14C02EF198091BB00436463 /* Build configuration list for PBXNativeTarget "Bapit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1B27FF919776D3B006DBC47 /* Debug */,
-				E1B27FFA19776D3B006DBC47 /* Release */,
+				E14C02F0198091BB00436463 /* Debug */,
+				E14C02F1198091BB00436463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		E1B27FFB19776D3B006DBC47 /* Build configuration list for PBXNativeTarget "BapitTests" */ = {
+		E14C02F2198091BB00436463 /* Build configuration list for PBXNativeTarget "BapitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E1B27FFC19776D3B006DBC47 /* Debug */,
-				E1B27FFD19776D3B006DBC47 /* Release */,
+				E14C02F3198091BB00436463 /* Debug */,
+				E14C02F4198091BB00436463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E1B27FD019776D3B006DBC47 /* Project object */;
+	rootObject = E14C02C7198091BB00436463 /* Project object */;
 }
