@@ -45,10 +45,17 @@ class GameScene: SKScene {
     }
   }
 
+  let tapToStartLabel = SKLabelNode(fontNamed: "Helvetica")
   let ball: SKShapeNode
   let scoreLabel: SKLabelNode = SKLabelNode()
   let highScoreLabel: SKLabelNode = SKLabelNode()
   let bottomBorder: SKNode = SKNode()
+
+  var started: Bool = false {
+    didSet {
+      tapToStartLabel.removeFromParent()
+    }
+  }
 
   // MARK: -
   // MARK: Init
@@ -74,14 +81,23 @@ class GameScene: SKScene {
 
     self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
 
-    self.addChild(createBall())
+    self.addChild(createTapToStartLabel())
     self.addChild(createBottomBorder())
     self.addChild(createScoreLabel())
     self.addChild(createHighScoreLabel())
+    self.addChild(createBall())
   }
 
   // MARK: -
   // MARK: Elements
+
+  func createTapToStartLabel() -> SKLabelNode {
+    tapToStartLabel.color = SKColor.grayColor()
+    tapToStartLabel.text = "Tap to start"
+    tapToStartLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) + 100);
+
+    return tapToStartLabel
+  }
 
   func createBall() -> SKShapeNode {
     ball.fillColor = SKColor.blackColor()
@@ -92,6 +108,9 @@ class GameScene: SKScene {
     ball.physicsBody.restitution = 0.5
     ball.physicsBody.categoryBitMask = ColliderType.Ball.toRaw()
     ball.physicsBody.contactTestBitMask = ColliderType.BottomBorder.toRaw()
+
+    // Init to false so we can wait for the user to tap when ready
+    ball.physicsBody.dynamic = false
 
     return ball;
   }
@@ -130,7 +149,12 @@ class GameScene: SKScene {
   // MARK: Interaction
 
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    /* Called when a touch begins */
+    var hit = false
+
+    if (!started) {
+      started = true
+      ball.physicsBody.dynamic = true;
+    }
         
     for touch: AnyObject in touches {
       let location = touch.locationInNode(self)
@@ -147,11 +171,14 @@ class GameScene: SKScene {
         // doesn't negate the added impulse
         ball.physicsBody.velocity = CGVectorMake(-point.x * 10, 500)
 
-        score.hits++
-      } else {
-        score.misses++
+        hit = true
       }
+    }
 
+    if (hit) {
+      score.hits++
+    } else {
+      score.misses++
     }
 
   }
@@ -161,15 +188,17 @@ class GameScene: SKScene {
   }
 }
 
-
+// MARK: -
+// MARK: Collisions (Game Over Present)
 extension GameScene: SKPhysicsContactDelegate {
   func didBeginContact(contact: SKPhysicsContact!) {
 
     if (contact.bodyA.categoryBitMask == ColliderType.BottomBorder.toRaw() &&
         contact.bodyB.categoryBitMask == ColliderType.Ball.toRaw()) {
 
-      // Reset count when you hit the bottom
-      score = TapCount(hits: 0, misses: 0)
+      let gameOverScene = GameOverScene(size: frame.size, score: score.hits)
+      let transition = SKTransition.doorwayWithDuration(0.5)
+      view.presentScene(gameOverScene, transition: transition)
     }
   }
 }

@@ -14,6 +14,7 @@
 		E14C02DE198091BB00436463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14C02DC198091BB00436463 /* Main.storyboard */; };
 		E14C02E0198091BB00436463 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14C02DF198091BB00436463 /* Images.xcassets */; };
 		E14C02EC198091BB00436463 /* BapitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C02EB198091BB00436463 /* BapitTests.swift */; };
+		E16A23DA1996D2F10001078F /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A23D91996D2F10001078F /* GameOverScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		E14C02E5198091BB00436463 /* BapitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BapitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14C02EA198091BB00436463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E14C02EB198091BB00436463 /* BapitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BapitTests.swift; sourceTree = "<group>"; };
+		E16A23D91996D2F10001078F /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				E14C02D4198091BB00436463 /* AppDelegate.swift */,
 				E14C02D6198091BB00436463 /* GameScene.sks */,
 				E14C02D8198091BB00436463 /* GameScene.swift */,
+				E16A23D91996D2F10001078F /* GameOverScene.swift */,
 				E14C02DA198091BB00436463 /* GameViewController.swift */,
 				E14C02DC198091BB00436463 /* Main.storyboard */,
 				E14C02DF198091BB00436463 /* Images.xcassets */,
@@ -217,6 +220,7 @@
 			files = (
 				E14C02D9198091BB00436463 /* GameScene.swift in Sources */,
 				E14C02DB198091BB00436463 /* GameViewController.swift in Sources */,
+				E16A23DA1996D2F10001078F /* GameOverScene.swift in Sources */,
 				E14C02D5198091BB00436463 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Bapit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -345,6 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Bapit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
