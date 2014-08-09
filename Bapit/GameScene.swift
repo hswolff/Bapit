@@ -15,13 +15,22 @@ enum ColliderType: UInt32 {
 }
 
 struct TapCount: Printable {
-  var hits: Int
+  var hits: Int {
+    didSet {
+      if (self.hits > TapCount.highest) {
+        TapCount.highest = self.hits
+      }
+    }
+  }
+
   var misses: Int
 
   // Allow for easy debugging with description
   var description: String {
     return "Hits: \(self.hits) \nMisses: \(self.misses)"
   }
+
+  static var highest = 0
 }
 
 class GameScene: SKScene {
@@ -32,12 +41,14 @@ class GameScene: SKScene {
   var score: TapCount {
     didSet {
       scoreLabel.text = "Score: \(self.score.hits)"
+      highScoreLabel.text = "High Score: \(TapCount.highest)"
     }
   }
 
   let ball: SKShapeNode
-  let scoreLabel: SKLabelNode
-  let bottomBorder: SKNode
+  let scoreLabel: SKLabelNode = SKLabelNode()
+  let highScoreLabel: SKLabelNode = SKLabelNode()
+  let bottomBorder: SKNode = SKNode()
 
   // MARK: -
   // MARK: Init
@@ -50,8 +61,6 @@ class GameScene: SKScene {
     self.score = TapCount(hits: 0, misses: 0)
 
     self.ball = SKShapeNode(circleOfRadius: ballRadius)
-    self.bottomBorder = SKNode()
-    self.scoreLabel = SKLabelNode()
 
     super.init(size: size)
   }
@@ -68,6 +77,7 @@ class GameScene: SKScene {
     self.addChild(createBall())
     self.addChild(createBottomBorder())
     self.addChild(createScoreLabel())
+    self.addChild(createHighScoreLabel())
   }
 
   // MARK: -
@@ -100,9 +110,20 @@ class GameScene: SKScene {
     scoreLabel.fontSize = 22
 
     // Bottom Left
-    scoreLabel.position = CGPointMake(CGRectGetMidX(frame)/3, 20);
+    scoreLabel.position = CGPointMake(CGRectGetMidX(frame)/3, frame.height - 64);
 
     return scoreLabel
+  }
+
+  func createHighScoreLabel() -> SKLabelNode {
+    // Create score label
+    highScoreLabel.fontName = "Helvetica"
+    highScoreLabel.fontSize = 22
+
+    // Bottom Left
+    highScoreLabel.position = CGPointMake(CGRectGetMidX(frame)/2, frame.height - 32);
+
+    return highScoreLabel
   }
 
   // MARK: -
