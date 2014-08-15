@@ -76,8 +76,10 @@ class GameScene: SKScene {
     self.backgroundColor = SKColor.grayColor()
 
     self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
-    self.physicsWorld.speed = 1.25
     self.physicsWorld.contactDelegate = self
+    // Set speed initially to 0 so that we have a 'resting' state before
+    // the user engages with the game
+    self.physicsWorld.speed = 0
 
     self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
 
@@ -108,9 +110,6 @@ class GameScene: SKScene {
     ball.physicsBody.restitution = 0.5
     ball.physicsBody.categoryBitMask = ColliderType.Ball.toRaw()
     ball.physicsBody.contactTestBitMask = ColliderType.BottomBorder.toRaw()
-
-    // Init to false so we can wait for the user to tap when ready
-    ball.physicsBody.dynamic = false
 
     return ball;
   }
@@ -153,7 +152,7 @@ class GameScene: SKScene {
 
     if (!started) {
       started = true
-      ball.physicsBody.dynamic = true;
+      self.physicsWorld.speed = 1.25
     }
         
     for touch: AnyObject in touches {
