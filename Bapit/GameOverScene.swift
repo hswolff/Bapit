@@ -11,7 +11,7 @@ import SpriteKit
 class GameOverScene: SKScene {
   let score: Int
 
-  required init(coder aDecoder: NSCoder!) {
+  required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
   }
 
