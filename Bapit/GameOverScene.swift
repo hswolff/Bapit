@@ -57,6 +57,6 @@ class GameOverScene: SKScene {
     let scene = GameScene(size: frame.size)
     //      let transition = SKTransition.revealWithDirection(.Left, duration: 0.75)
     let transition = SKTransition.doorwayWithDuration(0.5)
-    view.presentScene(scene, transition: transition)
+    view.presentScene(scene)
   }
 }

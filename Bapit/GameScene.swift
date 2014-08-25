@@ -196,7 +196,7 @@ extension GameScene: SKPhysicsContactDelegate {
         contact.bodyB.categoryBitMask == ColliderType.Ball.toRaw()) {
 
       let gameOverScene = GameOverScene(size: frame.size, score: score.hits)
-      let transition = SKTransition.doorwayWithDuration(0.5)
+      let transition = SKTransition.pushWithDirection(.Down, duration: 0.5)
       view.presentScene(gameOverScene, transition: transition)
     }
   }
