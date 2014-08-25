@@ -1,67 +1,62 @@
 //
-//  GameOverScene.swift
+//  MainMenuScene.swift
 //  Bapit
 //
-//  Created by Harry Wolff on 8/9/14.
+//  Created by Harry Wolff on 8/24/14.
 //  Copyright (c) 2014 com.chartbeat. All rights reserved.
 //
 
 import SpriteKit
 
-class GameOverScene: SKScene {
-  let mainMenuButtonName = "mainMenuButton"
+enum ButtonNames: String {
+  case Play = "playButton"
+  case Settings = "settingsButton"
+}
 
-  let score: Int
+class MainMenuScene: SKScene {
 
   required init(coder aDecoder: NSCoder) {
     fatalError("NSCoding not supported")
   }
 
-  init(size: CGSize, score: Int) {
-    self.score = score
+  override init(size: CGSize) {
     super.init(size: size)
   }
 
   override func didMoveToView(view: SKView!) {
     self.addChild(createHeadingLabel())
-    self.addChild(createScoreResultLabel())
-    self.addChild(createHighScoreLabel())
-    self.addChild(createMainMenuButton())
+    self.addChild(createPlayButton())
+    self.addChild(createSettingsButton())
   }
 
   func createHeadingLabel() -> SKLabelNode {
     let label = SKLabelNode(fontNamed: "Helvetica")
     label.position = CGPointMake(frame.width / 2, CGRectGetMidY(frame) * 1.5)
     label.color = SKColor.grayColor()
-    label.text = "Game Over"
+    label.fontSize = 40
+    label.text = "Bapit"
 
     return label
   }
 
-  func createScoreResultLabel() -> SKLabelNode {
+  func createPlayButton() -> SKLabelNode {
     let label = SKLabelNode(fontNamed: "Helvetica")
     label.position = CGPointMake(frame.width / 2, CGRectGetMidY(frame))
     label.color = SKColor.grayColor()
-    label.text = "Score: \(score)"
+    label.fontSize = 28
+    label.name = ButtonNames.Play.toRaw()
+    label.text = "Play"
 
     return label
   }
 
-  func createHighScoreLabel() -> SKLabelNode {
+  func createSettingsButton() -> SKLabelNode {
     let label = SKLabelNode(fontNamed: "Helvetica")
     label.position = CGPointMake(frame.width / 2, CGRectGetMidY(frame) / 2)
     label.color = SKColor.grayColor()
-    label.text = "High Score: \(TapCount.highest)"
-
-    return label
-  }
-
-  func createMainMenuButton() -> SKLabelNode {
-    let label = SKLabelNode(fontNamed: "Helvetica")
-    label.position = CGPointMake(frame.width / 2, CGRectGetMidY(frame) / 3)
-    label.color = SKColor.grayColor()
-    label.name = self.mainMenuButtonName
-    label.text = "Main Menu"
+    label.name = ButtonNames.Settings.toRaw()
+    label.fontSize = 28
+    label.text = "Settings"
 
     return label
   }
@@ -71,14 +66,14 @@ class GameOverScene: SKScene {
     let location = touch.locationInNode(self)
     let node = self.nodeAtPoint(location)
 
-    if node?.name == mainMenuButtonName {
-      let scene = MainMenuScene(size: frame.size)
-      let transition = SKTransition.flipHorizontalWithDuration(0.50)
-      view.presentScene(scene, transition: transition)
-    } else {
+    if node?.name == ButtonNames.Play.toRaw() {
       let scene = GameScene(size: frame.size)
       let transition = SKTransition.revealWithDirection(.Up, duration: 0.50)
       view.presentScene(scene, transition: transition)
+    } else if node?.name == ButtonNames.Settings.toRaw() {
+      println("Implement settings")
     }
+
   }
+
 }

@@ -21,8 +21,7 @@ class GameViewController: UIViewController {
   }
 
   func loadFromClass() {
-    let scene = GameScene(size: self.view.frame.size)
-    // Configure the view.
+    let scene = MainMenuScene(size: self.view.frame.size)
     let skView = self.view as SKView
 
     setupViewAndPresentScene(skView, scene)
