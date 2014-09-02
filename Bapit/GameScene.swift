@@ -105,19 +105,23 @@ class GameScene: SKScene {
     ball.fillColor = SKColor.blackColor()
     ball.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 
-    ball.physicsBody = SKPhysicsBody(circleOfRadius: ballRadius)
-    ball.physicsBody.allowsRotation = false
-    ball.physicsBody.restitution = 0.5
-    ball.physicsBody.categoryBitMask = ColliderType.Ball.toRaw()
-    ball.physicsBody.contactTestBitMask = ColliderType.BottomBorder.toRaw()
+    let physicsBody = SKPhysicsBody(circleOfRadius: ballRadius)
+    physicsBody.allowsRotation = false
+    physicsBody.restitution = 0.5
+    physicsBody.categoryBitMask = ColliderType.Ball.toRaw()
+    physicsBody.contactTestBitMask = ColliderType.BottomBorder.toRaw()
+
+    ball.physicsBody = physicsBody
 
     return ball;
   }
 
   func createBottomBorder() -> SKNode {
-    bottomBorder.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, 1))
-    bottomBorder.physicsBody.dynamic = false
-    bottomBorder.physicsBody.categoryBitMask = ColliderType.BottomBorder.toRaw()
+    let physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, 1))
+    physicsBody.dynamic = false
+    physicsBody.categoryBitMask = ColliderType.BottomBorder.toRaw()
+
+    bottomBorder.physicsBody = physicsBody
 
     return bottomBorder
   }
@@ -168,7 +172,7 @@ class GameScene: SKScene {
 
         // Directly assign the ball velocity so that its current velocity
         // doesn't negate the added impulse
-        ball.physicsBody.velocity = CGVectorMake(-point.x * 10, 500)
+        ball.physicsBody?.velocity = CGVectorMake(-point.x * 10, 500)
 
         hit = true
       }
@@ -197,7 +201,7 @@ extension GameScene: SKPhysicsContactDelegate {
 
       let gameOverScene = GameOverScene(size: frame.size, score: score.hits)
       let transition = SKTransition.pushWithDirection(.Down, duration: 0.5)
-      view.presentScene(gameOverScene, transition: transition)
+      view?.presentScene(gameOverScene, transition: transition)
     }
   }
 }

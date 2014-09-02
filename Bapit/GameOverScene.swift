@@ -22,7 +22,7 @@ class GameOverScene: SKScene {
     super.init(size: size)
   }
 
-  override func didMoveToView(view: SKView!) {
+  override func didMoveToView(view: SKView) {
     self.addChild(createHeadingLabel())
     self.addChild(createScoreResultLabel())
     self.addChild(createHighScoreLabel())
@@ -66,19 +66,19 @@ class GameOverScene: SKScene {
     return label
   }
 
-  override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
     let touch = touches.anyObject() as UITouch
     let location = touch.locationInNode(self)
     let node = self.nodeAtPoint(location)
 
-    if node?.name == mainMenuButtonName {
+    if node.name == mainMenuButtonName {
       let scene = MainMenuScene(size: frame.size)
       let transition = SKTransition.flipHorizontalWithDuration(0.50)
-      view.presentScene(scene, transition: transition)
+      view?.presentScene(scene, transition: transition)
     } else {
       let scene = GameScene(size: frame.size)
       let transition = SKTransition.revealWithDirection(.Up, duration: 0.50)
-      view.presentScene(scene, transition: transition)
+      view?.presentScene(scene, transition: transition)
     }
   }
 }

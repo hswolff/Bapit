@@ -23,7 +23,7 @@ class MainMenuScene: SKScene {
     super.init(size: size)
   }
 
-  override func didMoveToView(view: SKView!) {
+  override func didMoveToView(view: SKView) {
     self.addChild(createHeadingLabel())
     self.addChild(createPlayButton())
     self.addChild(createSettingsButton())
@@ -61,16 +61,16 @@ class MainMenuScene: SKScene {
     return label
   }
 
-  override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
     let touch = touches.anyObject() as UITouch
     let location = touch.locationInNode(self)
     let node = self.nodeAtPoint(location)
 
-    if node?.name == ButtonNames.Play.toRaw() {
+    if node.name == ButtonNames.Play.toRaw() {
       let scene = GameScene(size: frame.size)
       let transition = SKTransition.revealWithDirection(.Up, duration: 0.50)
-      view.presentScene(scene, transition: transition)
-    } else if node?.name == ButtonNames.Settings.toRaw() {
+      self.view?.presentScene(scene, transition: transition)
+    } else if node.name == ButtonNames.Settings.toRaw() {
       println("Implement settings")
     }
 
