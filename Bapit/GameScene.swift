@@ -36,7 +36,6 @@ struct TapCount: Printable {
 class GameScene: SKScene {
   // MARK: -
   // MARK: Properties
-  let ballRadius: CGFloat = 50
 
   var score: TapCount {
     didSet {
@@ -46,7 +45,7 @@ class GameScene: SKScene {
   }
 
   let tapToStartLabel = SKLabelNode(fontNamed: "Helvetica")
-  let ball: SKShapeNode
+  let ball: BallNode
   let scoreLabel: SKLabelNode = SKLabelNode()
   let highScoreLabel: SKLabelNode = SKLabelNode()
   let bottomBorder: SKNode = SKNode()
@@ -67,7 +66,7 @@ class GameScene: SKScene {
   override init(size: CGSize) {
     self.score = TapCount(hits: 0, misses: 0)
 
-    self.ball = SKShapeNode(circleOfRadius: ballRadius)
+    self.ball = BallNode(mode: .Game)
 
     super.init(size: size)
   }
@@ -87,7 +86,7 @@ class GameScene: SKScene {
     self.addChild(createBottomBorder())
     self.addChild(createScoreLabel())
     self.addChild(createHighScoreLabel())
-    self.addChild(createBall())
+    self.addChild(ball.centerInFrame(frame))
   }
 
   // MARK: -
@@ -99,21 +98,6 @@ class GameScene: SKScene {
     tapToStartLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) + 100);
 
     return tapToStartLabel
-  }
-
-  func createBall() -> SKShapeNode {
-    ball.fillColor = SKColor.blackColor()
-    ball.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
-
-    let physicsBody = SKPhysicsBody(circleOfRadius: ballRadius)
-    physicsBody.allowsRotation = false
-    physicsBody.restitution = 0.5
-    physicsBody.categoryBitMask = ColliderType.Ball.toRaw()
-    physicsBody.contactTestBitMask = ColliderType.BottomBorder.toRaw()
-
-    ball.physicsBody = physicsBody
-
-    return ball;
   }
 
   func createBottomBorder() -> SKNode {

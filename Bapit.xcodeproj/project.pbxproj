@@ -15,6 +15,7 @@
 		E14C02EC198091BB00436463 /* BapitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C02EB198091BB00436463 /* BapitTests.swift */; };
 		E16A23DA1996D2F10001078F /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16A23D91996D2F10001078F /* GameOverScene.swift */; };
 		E1A096A319AAC066004BF62B /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A096A219AAC066004BF62B /* MainMenuScene.swift */; };
+		E1AD7EA719F4A6A7001D72E6 /* BallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EA619F4A6A7001D72E6 /* BallNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		E14C02EB198091BB00436463 /* BapitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BapitTests.swift; sourceTree = "<group>"; };
 		E16A23D91996D2F10001078F /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		E1A096A219AAC066004BF62B /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		E1AD7EA619F4A6A7001D72E6 /* BallNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BallNode.swift; path = Nodes/BallNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,10 @@
 		E14C02D1198091BB00436463 /* Bapit */ = {
 			isa = PBXGroup;
 			children = (
-				E14C02D4198091BB00436463 /* AppDelegate.swift */,
+				E1AD7EA519F4A672001D72E6 /* Nodes */,
 				E1A096A519AAC109004BF62B /* Scenes */,
-				E14C02DA198091BB00436463 /* GameViewController.swift */,
+				E1AD7EA819F4A6E1001D72E6 /* Controllers */,
+				E14C02D4198091BB00436463 /* AppDelegate.swift */,
 				E14C02DC198091BB00436463 /* Main.storyboard */,
 				E14C02DF198091BB00436463 /* Images.xcassets */,
 				E14C02D2198091BB00436463 /* Supporting Files */,
@@ -124,6 +127,22 @@
 				E16A23D91996D2F10001078F /* GameOverScene.swift */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		E1AD7EA519F4A672001D72E6 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				E1AD7EA619F4A6A7001D72E6 /* BallNode.swift */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
+		E1AD7EA819F4A6E1001D72E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E14C02DA198091BB00436463 /* GameViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1AD7EA719F4A6A7001D72E6 /* BallNode.swift in Sources */,
 				E1A096A319AAC066004BF62B /* MainMenuScene.swift in Sources */,
 				E14C02D9198091BB00436463 /* GameScene.swift in Sources */,
 				E14C02DB198091BB00436463 /* GameViewController.swift in Sources */,
