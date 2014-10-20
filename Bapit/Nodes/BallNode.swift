@@ -53,8 +53,13 @@ class BallNode: SKShapeNode {
 
   func configureDemoMode() {
     if let physics = physicsBody {
-      physics.allowsRotation = false
-      physics.restitution = 0.5
+      physics.allowsRotation = true
+      physics.mass = 0.0
+      physics.friction = 0.0
+      physics.restitution = 1.0
+      physics.angularDamping = 0.0
+      physics.linearDamping = 0.0
+      physics.velocity = CGVectorMake(250, 250)
     }
   }
 

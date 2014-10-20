@@ -15,18 +15,17 @@ enum ButtonNames: String {
 
 class MainMenuScene: SKScene {
 
-  required init(coder aDecoder: NSCoder) {
-    fatalError("NSCoding not supported")
-  }
-
-  override init(size: CGSize) {
-    super.init(size: size)
-  }
-
   override func didMoveToView(view: SKView) {
     self.addChild(createHeadingLabel())
     self.addChild(createPlayButton())
     self.addChild(createSettingsButton())
+
+    self.physicsWorld.gravity = CGVectorMake(0, 0);
+    self.physicsWorld.speed = 2
+
+    self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+    let ball = BallNode(mode: .Demo)
+    self.addChild(ball.centerInFrame(frame))
   }
 
   func createHeadingLabel() -> SKLabelNode {
