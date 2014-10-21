@@ -103,7 +103,7 @@ class GameScene: SKScene {
   func createBottomBorder() -> SKNode {
     let physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, 1))
     physicsBody.dynamic = false
-    physicsBody.categoryBitMask = ColliderType.BottomBorder.toRaw()
+    physicsBody.categoryBitMask = ColliderType.BottomBorder.rawValue
 
     bottomBorder.physicsBody = physicsBody
 
@@ -180,8 +180,8 @@ class GameScene: SKScene {
 extension GameScene: SKPhysicsContactDelegate {
   func didBeginContact(contact: SKPhysicsContact!) {
 
-    if (contact.bodyA.categoryBitMask == ColliderType.BottomBorder.toRaw() &&
-        contact.bodyB.categoryBitMask == ColliderType.Ball.toRaw()) {
+    if (contact.bodyA.categoryBitMask == ColliderType.BottomBorder.rawValue &&
+        contact.bodyB.categoryBitMask == ColliderType.Ball.rawValue) {
 
       let gameOverScene = GameOverScene(size: frame.size, score: score.hits)
       let transition = SKTransition.pushWithDirection(.Down, duration: 0.5)

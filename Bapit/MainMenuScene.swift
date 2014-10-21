@@ -43,7 +43,7 @@ class MainMenuScene: SKScene {
     label.position = CGPointMake(frame.width / 2, CGRectGetMidY(frame))
     label.color = SKColor.grayColor()
     label.fontSize = 28
-    label.name = ButtonNames.Play.toRaw()
+    label.name = ButtonNames.Play.rawValue
     label.text = "Play"
 
     return label
@@ -53,7 +53,7 @@ class MainMenuScene: SKScene {
     let label = SKLabelNode(fontNamed: "Helvetica")
     label.position = CGPointMake(frame.width / 2, CGRectGetMidY(frame) / 2)
     label.color = SKColor.grayColor()
-    label.name = ButtonNames.Settings.toRaw()
+    label.name = ButtonNames.Settings.rawValue
     label.fontSize = 28
     label.text = "Settings"
 
@@ -65,11 +65,11 @@ class MainMenuScene: SKScene {
     let location = touch.locationInNode(self)
     let node = self.nodeAtPoint(location)
 
-    if node.name == ButtonNames.Play.toRaw() {
+    if node.name == ButtonNames.Play.rawValue {
       let scene = GameScene(size: frame.size)
       let transition = SKTransition.revealWithDirection(.Up, duration: 0.50)
       self.view?.presentScene(scene, transition: transition)
-    } else if node.name == ButtonNames.Settings.toRaw() {
+    } else if node.name == ButtonNames.Settings.rawValue {
       println("Implement settings")
     }
 

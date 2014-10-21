@@ -39,8 +39,8 @@ class BallNode: SKShapeNode {
     fillColor = SKColor.blackColor()
 
     let physicsBody = SKPhysicsBody(polygonFromPath: path)
-    physicsBody.categoryBitMask = ColliderType.Ball.toRaw()
-    physicsBody.contactTestBitMask = ColliderType.BottomBorder.toRaw()
+    physicsBody.categoryBitMask = ColliderType.Ball.rawValue
+    physicsBody.contactTestBitMask = ColliderType.BottomBorder.rawValue
     self.physicsBody = physicsBody
   }
 
