@@ -14,36 +14,9 @@ enum ColliderType: UInt32 {
   case BottomBorder = 2
 }
 
-struct TapCount: Printable {
-  var hits: Int {
-    didSet {
-      if (self.hits > TapCount.highest) {
-        TapCount.highest = self.hits
-      }
-    }
-  }
-
-  var misses: Int
-
-  // Allow for easy debugging with description
-  var description: String {
-    return "Hits: \(self.hits) \nMisses: \(self.misses)"
-  }
-
-  static var highest = 0
-}
-
 class GameScene: SKScene {
   // MARK: -
   // MARK: Properties
-
-  var score: TapCount {
-    didSet {
-      scoreLabel.text = "Score: \(self.score.hits)"
-      highScoreLabel.text = "High Score: \(TapCount.highest)"
-    }
-  }
-
   let tapToStartLabel = SKLabelNode(fontNamed: "Helvetica")
   let ball: BallNode
   let scoreLabel: SKLabelNode = SKLabelNode()
@@ -64,7 +37,7 @@ class GameScene: SKScene {
   }
 
   override init(size: CGSize) {
-    self.score = TapCount(hits: 0, misses: 0)
+    GameData.sharedInstance.reset()
 
     self.ball = BallNode(mode: .Game)
 
@@ -163,11 +136,13 @@ class GameScene: SKScene {
     }
 
     if (hit) {
-      score.hits++
+      GameData.sharedInstance.hits++
     } else {
-      score.misses++
+      GameData.sharedInstance.misses++
     }
 
+    scoreLabel.text = "Score: \(GameData.sharedInstance.hits)"
+    highScoreLabel.text = "High Score: \(GameData.sharedInstance.highScore)"
   }
 
   override func update(currentTime: CFTimeInterval) {
@@ -183,7 +158,7 @@ extension GameScene: SKPhysicsContactDelegate {
     if (contact.bodyA.categoryBitMask == ColliderType.BottomBorder.rawValue &&
         contact.bodyB.categoryBitMask == ColliderType.Ball.rawValue) {
 
-      let gameOverScene = GameOverScene(size: frame.size, score: score.hits)
+      let gameOverScene = GameOverScene(size: frame.size, score: GameData.sharedInstance.hits)
       let transition = SKTransition.pushWithDirection(.Down, duration: 0.5)
       view?.presentScene(gameOverScene, transition: transition)
     }

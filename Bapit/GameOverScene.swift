@@ -20,6 +20,8 @@ class GameOverScene: SKScene {
   init(size: CGSize, score: Int) {
     self.score = score
     super.init(size: size)
+
+    GameData.sharedInstance.save()
   }
 
   override func didMoveToView(view: SKView) {
@@ -51,7 +53,7 @@ class GameOverScene: SKScene {
     let label = SKLabelNode(fontNamed: "Helvetica")
     label.position = CGPointMake(frame.width / 2, CGRectGetMidY(frame) / 2)
     label.color = SKColor.grayColor()
-    label.text = "High Score: \(TapCount.highest)"
+    label.text = "High Score: \(GameData.sharedInstance.highScore)"
 
     return label
   }
