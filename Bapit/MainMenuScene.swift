@@ -24,6 +24,7 @@ class MainMenuScene: SKScene {
     self.physicsWorld.speed = 2
 
     self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+
     let ball = BallNode(mode: .Demo)
     self.addChild(ball.centerInFrame(frame))
   }

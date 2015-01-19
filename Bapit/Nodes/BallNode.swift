@@ -41,25 +41,26 @@ class BallNode: SKShapeNode {
     let physicsBody = SKPhysicsBody(polygonFromPath: path)
     physicsBody.categoryBitMask = ColliderType.Ball.rawValue
     physicsBody.contactTestBitMask = ColliderType.BottomBorder.rawValue
+    
     self.physicsBody = physicsBody
   }
 
   func configureGameMode() {
-    if let physics = physicsBody {
-      physics.allowsRotation = false
-      physics.restitution = 0.5
+    if let physicsBody = physicsBody {
+      physicsBody.allowsRotation = false
+      physicsBody.restitution = 0.5
     }
   }
 
   func configureDemoMode() {
-    if let physics = physicsBody {
-      physics.allowsRotation = true
-      physics.mass = 0.0
-      physics.friction = 0.0
-      physics.restitution = 1.0
-      physics.angularDamping = 0.0
-      physics.linearDamping = 0.0
-      physics.velocity = CGVectorMake(250, 250)
+    if let physicsBody = physicsBody {
+      physicsBody.allowsRotation = true
+      physicsBody.mass = 0.0
+      physicsBody.friction = 0.0
+      physicsBody.restitution = 1.0
+      physicsBody.angularDamping = 0.0
+      physicsBody.linearDamping = 0.0
+      physicsBody.velocity = CGVectorMake(250, 250)
     }
   }
 
