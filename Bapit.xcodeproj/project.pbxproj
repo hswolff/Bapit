@@ -18,6 +18,7 @@
 		E1A096A319AAC066004BF62B /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A096A219AAC066004BF62B /* MainMenuScene.swift */; };
 		E1A62C391A6CB83700F0296A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1A62C381A6CB83700F0296A /* Config.plist */; };
 		E1A62C3B1A6CCA7500F0296A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A62C3A1A6CCA7500F0296A /* Config.swift */; };
+		E1A62C3E1A6CD4F100F0296A /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A62C3D1A6CD4F100F0296A /* AdService.swift */; };
 		E1AD7EA719F4A6A7001D72E6 /* BallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EA619F4A6A7001D72E6 /* BallNode.swift */; };
 		F9E778780F2349134CDF2AEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E54FFFF14C5F11E303826C2F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		E1A62C341A6CAF6100F0296A /* Bapit-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bapit-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1A62C381A6CB83700F0296A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = "Supporting Files/Config.plist"; sourceTree = "<group>"; };
 		E1A62C3A1A6CCA7500F0296A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Models/Config.swift; sourceTree = "<group>"; };
+		E1A62C3D1A6CD4F100F0296A /* AdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdService.swift; path = Services/AdService.swift; sourceTree = "<group>"; };
 		E1AD7EA619F4A6A7001D72E6 /* BallNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BallNode.swift; path = Nodes/BallNode.swift; sourceTree = "<group>"; };
 		E54FFFF14C5F11E303826C2F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 		E14C02D1198091BB00436463 /* Bapit */ = {
 			isa = PBXGroup;
 			children = (
+				E1A62C3C1A6CD4DC00F0296A /* Services */,
 				E14C89E21A2BFF100042F619 /* Models */,
 				E1AD7EA519F4A672001D72E6 /* Nodes */,
 				E1A096A519AAC109004BF62B /* Scenes */,
@@ -170,6 +173,14 @@
 				E16A23D91996D2F10001078F /* GameOverScene.swift */,
 			);
 			name = Scenes;
+			sourceTree = "<group>";
+		};
+		E1A62C3C1A6CD4DC00F0296A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E1A62C3D1A6CD4F100F0296A /* AdService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		E1AD7EA519F4A672001D72E6 /* Nodes */ = {
@@ -327,6 +338,7 @@
 				E1A096A319AAC066004BF62B /* MainMenuScene.swift in Sources */,
 				E14C89E41A2BFF2D0042F619 /* GameData.swift in Sources */,
 				E1A62C3B1A6CCA7500F0296A /* Config.swift in Sources */,
+				E1A62C3E1A6CD4F100F0296A /* AdService.swift in Sources */,
 				E14C02D9198091BB00436463 /* GameScene.swift in Sources */,
 				E14C02DB198091BB00436463 /* GameViewController.swift in Sources */,
 				E16A23DA1996D2F10001078F /* GameOverScene.swift in Sources */,

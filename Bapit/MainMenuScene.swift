@@ -16,6 +16,8 @@ enum ButtonNames: String {
 class MainMenuScene: SKScene {
 
   override func didMoveToView(view: SKView) {
+    AdService.showBannerAd()
+
     self.addChild(createHeadingLabel())
     self.addChild(createPlayButton())
     self.addChild(createSettingsButton())

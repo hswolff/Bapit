@@ -9,11 +9,8 @@
 import UIKit
 import SpriteKit
 
-enum NotificationNames: String {
-  case ToggleBannerAd = "ToggleBannerAd"
-}
-
 class GameViewController: UIViewController {
+  let adBannerView: GADBannerView = GADBannerView(adSize: kGADAdSizeBanner, origin: CGPointMake(0, 0))
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,7 +33,6 @@ class GameViewController: UIViewController {
   }
 
   private func setupBannerAd() {
-    let adBannerView = GADBannerView(adSize: kGADAdSizeBanner, origin: CGPointMake(0, 0))
     // Replace this ad unit ID with your own ad unit ID.
     adBannerView.adUnitID = Config.sharedInstance.topBannerAdId
     adBannerView.rootViewController = self;
@@ -52,16 +48,12 @@ class GameViewController: UIViewController {
     adRequest.testDevices = [GAD_SIMULATOR_ID]
 
     // Setup notifications for showing/hiding the banner ad
-    NSNotificationCenter.defaultCenter().addObserverForName(NotificationNames.ToggleBannerAd.rawValue, object: nil, queue: nil) { note in
+    NSNotificationCenter.defaultCenter().addObserverForName(AdService.Notifications.Toggle.rawValue, object: nil, queue: nil) { note in
       if let object = note.object as? [String: String] {
         if object["state"] == "hide" {
-          UIView.animateWithDuration(0.25, delay: 0.25, options: .CurveEaseInOut, animations: { () in
-            adBannerView.frame.origin = CGPointMake(0, -adBannerView.frame.size.height)
-          }, completion: { completed in
-            adBannerView.hidden = true
-          })
+          self.hideBanner()
         } else if object["state"] == "show" {
-          adBannerView.loadRequest(adRequest)
+          self.adBannerView.loadRequest(adRequest)
         }
       }
     }
@@ -73,16 +65,29 @@ class GameViewController: UIViewController {
 }
 
 extension GameViewController: GADBannerViewDelegate {
-  func adViewDidReceiveAd(adBannerView: GADBannerView!) {
+
+  func showBanner() {
     adBannerView.hidden = false
 
     adBannerView.frame.origin = CGPointMake(0, -adBannerView.frame.size.height)
     UIView.animateWithDuration(0.25, animations: {
-      adBannerView.frame.origin = CGPointMake(0, 0)
+      self.adBannerView.frame.origin = CGPointMake(0, 0)
     })
   }
 
+  func hideBanner() {
+    UIView.animateWithDuration(0.25, delay: 0.25, options: .CurveEaseInOut, animations: { () in
+      self.adBannerView.frame.origin = CGPointMake(0, -self.adBannerView.frame.size.height)
+    }, completion: { completed in
+        self.adBannerView.hidden = true
+    })
+  }
+
+  func adViewDidReceiveAd(adBannerView: GADBannerView!) {
+    showBanner()
+  }
+
   func adView(adBannerView: GADBannerView!, didFailToReceiveAdWithError error: GADRequestError!) {
-    adBannerView.hidden = true
+    hideBanner()
   }
 }

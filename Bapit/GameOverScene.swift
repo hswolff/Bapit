@@ -25,7 +25,7 @@ class GameOverScene: SKScene {
   }
 
   override func didMoveToView(view: SKView) {
-    NSNotificationCenter.defaultCenter().postNotificationName(NotificationNames.ToggleBannerAd.rawValue, object: ["state": "show"])
+    AdService.showBannerAd()
 
     self.addChild(createHeadingLabel())
     self.addChild(createScoreResultLabel())
@@ -71,8 +71,6 @@ class GameOverScene: SKScene {
   }
 
   override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    NSNotificationCenter.defaultCenter().postNotificationName(NotificationNames.ToggleBannerAd.rawValue, object: ["state": "hide"])
-
     let touch = touches.anyObject() as UITouch
     let location = touch.locationInNode(self)
     let node = self.nodeAtPoint(location)

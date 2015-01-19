@@ -45,6 +45,8 @@ class GameScene: SKScene {
   }
 
   override func didMoveToView(view: SKView) {
+    AdService.hideBannerAd()
+    
     self.backgroundColor = SKColor.grayColor()
 
     self.physicsWorld.gravity = CGVectorMake(0.0, -9.8);
