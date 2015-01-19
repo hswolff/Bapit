@@ -19,9 +19,10 @@ class GameScene: SKScene {
   // MARK: Properties
   let tapToStartLabel = SKLabelNode(fontNamed: "Helvetica")
   let ball: BallNode
-  let scoreLabel: SKLabelNode = SKLabelNode()
-  let highScoreLabel: SKLabelNode = SKLabelNode()
-  let bottomBorder: SKNode = SKNode()
+  let scoreLabel = SKLabelNode()
+  let highScoreLabel = SKLabelNode()
+  let bottomBorder = SKNode()
+  let tapAction = SKAction.playSoundFileNamed("Ball Tap.wav", waitForCompletion: false)
 
   var started: Bool = false {
     didSet {
@@ -138,6 +139,7 @@ class GameScene: SKScene {
     }
 
     if (hit) {
+      ball.runAction(tapAction)
       GameData.sharedInstance.hits++
     } else {
       GameData.sharedInstance.misses++

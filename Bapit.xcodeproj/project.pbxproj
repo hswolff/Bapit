@@ -19,6 +19,7 @@
 		E1A62C391A6CB83700F0296A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1A62C381A6CB83700F0296A /* Config.plist */; };
 		E1A62C3B1A6CCA7500F0296A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A62C3A1A6CCA7500F0296A /* Config.swift */; };
 		E1A62C3E1A6CD4F100F0296A /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A62C3D1A6CD4F100F0296A /* AdService.swift */; };
+		E1A62C411A6CD9EB00F0296A /* Ball Tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = E1A62C401A6CD9EB00F0296A /* Ball Tap.wav */; };
 		E1AD7EA719F4A6A7001D72E6 /* BallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AD7EA619F4A6A7001D72E6 /* BallNode.swift */; };
 		F9E778780F2349134CDF2AEC /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E54FFFF14C5F11E303826C2F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		E1A62C381A6CB83700F0296A /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = "Supporting Files/Config.plist"; sourceTree = "<group>"; };
 		E1A62C3A1A6CCA7500F0296A /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Models/Config.swift; sourceTree = "<group>"; };
 		E1A62C3D1A6CD4F100F0296A /* AdService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdService.swift; path = Services/AdService.swift; sourceTree = "<group>"; };
+		E1A62C401A6CD9EB00F0296A /* Ball Tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Ball Tap.wav"; path = "Media/Ball Tap.wav"; sourceTree = "<group>"; };
 		E1AD7EA619F4A6A7001D72E6 /* BallNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BallNode.swift; path = Nodes/BallNode.swift; sourceTree = "<group>"; };
 		E54FFFF14C5F11E303826C2F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				E14C02D4198091BB00436463 /* AppDelegate.swift */,
 				E14C02DC198091BB00436463 /* Main.storyboard */,
 				E14C02DF198091BB00436463 /* Images.xcassets */,
+				E1A62C3F1A6CD9DC00F0296A /* Media */,
 				E14C02D2198091BB00436463 /* Supporting Files */,
 			);
 			path = Bapit;
@@ -181,6 +184,14 @@
 				E1A62C3D1A6CD4F100F0296A /* AdService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		E1A62C3F1A6CD9DC00F0296A /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				E1A62C401A6CD9EB00F0296A /* Ball Tap.wav */,
+			);
+			name = Media;
 			sourceTree = "<group>";
 		};
 		E1AD7EA519F4A672001D72E6 /* Nodes */ = {
@@ -281,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A62C411A6CD9EB00F0296A /* Ball Tap.wav in Resources */,
 				E14C02E0198091BB00436463 /* Images.xcassets in Resources */,
 				E1A62C391A6CB83700F0296A /* Config.plist in Resources */,
 				E14C02DE198091BB00436463 /* Main.storyboard in Resources */,
