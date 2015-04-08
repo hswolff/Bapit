@@ -50,7 +50,7 @@ class GameData: NSObject, NSCoding {
 
     class func loadSaved() -> GameData {
         if let data = NSUserDefaults.standardUserDefaults().objectForKey("gameData") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as GameData
+            return NSKeyedUnarchiver.unarchiveObjectWithData(data) as! GameData
         }
         return GameData()
     }

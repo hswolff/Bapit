@@ -63,8 +63,8 @@ class MainMenuScene: SKScene {
     return label
   }
 
-  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    let touch = touches.anyObject() as UITouch
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    let touch = touches.first as! UITouch
     let location = touch.locationInNode(self)
     let node = self.nodeAtPoint(location)
 

@@ -19,13 +19,12 @@ class Config: NSObject {
   }
 
   override init() {
-    topBannerAdId = ""
-
     // Load Config.plist
-    if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist") {
-      if let configDict = NSDictionary(contentsOfFile: path) as? [String: String] {
-        topBannerAdId = configDict["topBannerAdId"]!
-      }
+    if let path = NSBundle.mainBundle().pathForResource("Config", ofType: "plist"),
+       let configDict = NSDictionary(contentsOfFile: path) as? [String: String] {
+      topBannerAdId = configDict["topBannerAdId"]!
+    } else {
+      topBannerAdId = ""
     }
 
     super.init()

@@ -111,7 +111,7 @@ class GameScene: SKScene {
   // MARK: -
   // MARK: Interaction
 
-  override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
     var hit = false
 
     if (!started) {
